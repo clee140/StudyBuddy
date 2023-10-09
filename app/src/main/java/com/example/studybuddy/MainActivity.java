@@ -43,7 +43,6 @@ import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-
     private MaterialButton inputImageButton; // UI view
     private MaterialButton recognizeTextButton; // UI view
     private ShapeableImageView imageView; // UI view
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private String[] storagePermissions; // Permission to pick image from camera/gallery.
     private ProgressBar progressBar;
     private TextRecognizer textRecognizer;
-
+    private String recognizedText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +65,7 @@ public class MainActivity extends AppCompatActivity {
         inputImageButton = findViewById(R.id.inputImageButton);
         recognizeTextButton = findViewById(R.id.recognizeTextButton);
         imageView = findViewById(R.id.imageView);
-        recognizedTextEt = findViewById(R.id.recognizedText);
-
+        //recognizedTextEt = findViewById(R.id.recognizedText);
         cameraPermissions = new String[]{Manifest.permission.CAMERA,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[]{Manifest.permission.CAMERA,
@@ -88,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Pick image first", Toast.LENGTH_SHORT).show();
                 } else {
                     recognizeTextFromImage();
+                    //String test = recognizedText;
+                    //Intent intent = new Intent(MainActivity.this, RecognizedText.class);
+                    //intent.putExtra("recognized_text_key", test);
+                    //startActivity(intent);
                 }
             }
         });
@@ -101,9 +103,12 @@ public class MainActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<Text>() {
                         @Override
                         public void onSuccess(Text text) {
-                            String recognizedText = text.getText();
+                            recognizedText = text.getText();
                             Log.d(TAG, "onSuccess: recognizedText: " + recognizedText);
-                            recognizedTextEt.setText(recognizedText);
+                            // recognizedTextEt.setText(recognizedText);
+                            Intent intent = new Intent(MainActivity.this, RecognizedText.class);
+                            intent.putExtra("recognized_text_key", recognizedText);
+                            startActivity(intent);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -139,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                         requestCameraPermission();
                     }
                 } else if (id == 2) {
-                    Log.d(TAG, "onMenuItemClick: GalleryCLicked");
+                    Log.d(TAG, "onMenuItemClick: GalleryClicked");
                     if (checkStoragePermission()) {
                         pickImageFromGallery();
                     } else {
@@ -244,13 +249,7 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults.length > 0) {
                     boolean cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                     boolean storageAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-                    //if (cameraAccepted && storageAccepted) {
-                        pickImageCamera();
-                    //}
-                //else {
-                  //      Toast.makeText(this, "Camera and Storage permissions are required!",
-                    //            Toast.LENGTH_SHORT).show();
-                    //}
+                    pickImageCamera();
                 } else {
                     Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show();
                 }
