@@ -31,7 +31,7 @@
         android:layout_below="@+id/app_name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:text="Create Flashcards with Photos!"
+        android:text="Create Flashcards in Seconds!"
         android:textColor="#FFFFFF"
         android:textSize="22.5sp" />
 
