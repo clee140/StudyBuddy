@@ -6,5 +6,5 @@ The app is divided into two parts: Optical Character Recognition (OCR) and a Lar
 Recognition v2 API. When the user captures an image, the app sends the image URI (file path address) to a method that handles the text extraction, leveraging functions from the 
 Google ML Kit Text Recognition v2 API. The extracted text is then sent to a seperate class that will convert it to flashcards. 
 
-The LLM integration was accomplished by utilizing the power of OpenAI API and the GPT-3 text-davinci-003 model. Once the GPT model is initialized, it receives a prompt to create 
+The LLM integration was accomplished by utilizing the power of OpenAI API and the GPT-3.5 text-davinci-003 model. Once the GPT model is initialized, it receives a prompt to create 
 flashcards with the extracted text, and the corresponding response is presented to the user.
