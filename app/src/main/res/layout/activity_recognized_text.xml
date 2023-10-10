@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecognizedText">
+    android:background="#8BC34A"
+tools:context=".RecognizedText">
+
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Flashcards"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="357dp"
+        android:layout_height="575dp"
+        android:layout_margin="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/recognizedText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:enabled="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:hint="Recognized Text"
-            android:textColor="@android:color/black"
+            android:textColor="#FFFFFF"
             android:textColorHint="@android:color/darker_gray"
-            android:textSize="16sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </ScrollView>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
