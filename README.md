@@ -1,5 +1,5 @@
 # StudyBuddy
-The StudyBuddy Android mobile app empowers users to seamlessly and effectively study any subject. With a just a simple photo of the user's study material, the app will swiftly
+The StudyBuddy Android mobile app empowers users to seamlessly and effectively study any subject. With just a simple photo of the user's study material, the app will swiftly
 generate custom flashcards that are ready to be used. That means less time spent reading abstruse textbooks and more time mastering important concepts.
 
 The app is divided into two parts: Optical Character Recognition (OCR) and a Large Language Model (LLM). The OCR implementation was accomplished using the Google ML Kit Text
