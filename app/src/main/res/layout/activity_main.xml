@@ -6,43 +6,73 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@android:color/white"
+    android:background="@drawable/activity_background"
     tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <TextView
+            android:id="@+id/start_studying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Let's start studying"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/inter_font"
+            android:textStyle="bold"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/underline"
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/start_studying"
+            android:layout_marginTop="-33dp"
+            android:src="@drawable/double_underline" />
+
+    </RelativeLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/inputImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Take Image"
+        android:fontFamily="@font/inter_font"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:icon="@drawable/baseline_add_a_photo_24"
-        app:backgroundTint="#8BC34A"
+        app:iconTint="@color/black"
+        app:backgroundTint="#29DD9E"
         app:cornerRadius="15dp"
-        android:layout_marginTop="16dp"
-        android:textSize="18sp"/>
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
 
 
     <com.google.android.material.imageview.ShapeableImageView
-    android:id="@+id/imageView"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="372dp"
+        android:adjustViewBounds="true"
         android:paddingTop="30dp"
         android:paddingBottom="30dp"
         android:src="@drawable/baseline_image_24"
-        app:layout_constraintTop_toTopOf="parent"
-        android:adjustViewBounds="true" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/recognizeTextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Flashcards"
-        android:textStyle="bold"
-        app:backgroundTint="#8BC34A"
-        app:icon="@drawable/baseline_document_scanner_24"
-        app:cornerRadius="15dp"
         android:layout_marginTop="16dp"
-        android:textSize="18sp"/>
+        android:fontFamily="@font/inter_font"
+        android:text="Create Flashcards"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="#29DD9E"
+        app:cornerRadius="15dp"
+        app:iconTint="@color/black"
+        app:icon="@drawable/baseline_document_scanner_24" />
 
 </LinearLayout>

@@ -2,59 +2,74 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8BC34A">
+    android:background="@drawable/background2">
 
     <ImageView
         android:id="@+id/app_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-         />
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/flashcard_icon"
+        android:layout_width="match_parent"
+        android:layout_height="441dp"
+        android:layout_below="@+id/app_logo"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/home_screen" />
 
     <TextView
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/app_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_below="@+id/flashcard_icon"
+        android:fontFamily="@font/inter_font"
+        android:shadowColor="#909090"
+        android:shadowDx="2"
+        android:shadowDy="10"
+        android:shadowRadius="10"
         android:text="Study Buddy"
-        android:textColor="#FFFFFF"
-        android:textSize="45sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textSize="55sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/yellow_underline"
+        android:layout_width="359dp"
+        android:layout_height="334dp"
+        android:layout_below="@+id/app_name"
+        android:layout_marginTop="-164dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/double_underline" />
 
     <TextView
         android:id="@+id/app_slogan"
-        android:layout_width="wrap_content"
+        android:layout_width="283dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/app_name"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/inter_font"
+        android:text="Unlocking Knowledge,      One Question at a Time"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="Create Flashcards in Seconds!"
-        android:textColor="#FFFFFF"
-        android:textSize="22.5sp" />
-
-    <ImageView
-        android:id="@+id/flashcard_icon"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/app_slogan"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/flashcard_icon" />
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="21sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/nextActivityButton"
-        android:layout_width="wrap_content"
+        android:layout_width="277dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/flashcard_icon"
+        android:layout_below="@+id/app_slogan"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="Start Studying >"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:background="#000000" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_shape"
+        android:fontFamily="@font/inter_font"
+        android:text="Start Studying"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:id="@+id/store_buttons_layout"
@@ -63,8 +78,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:orientation="horizontal">
-
-
     </LinearLayout>
 
     <LinearLayout
